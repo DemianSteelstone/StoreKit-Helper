@@ -10,6 +10,8 @@
 
 @interface StoreKitHelper : NSObject
 
++(void)appDidFinishLaunching;
+
 +(void)buyFeature:(NSString*)identifier completitionBlock:(void (^)(NSError* error))block;
 +(void)restorePurchases:(void (^)(NSString *identifer))purchaseRestored finishHandler:(void (^)(NSError *error))finishHandler;
 

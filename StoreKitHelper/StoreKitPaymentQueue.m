@@ -50,7 +50,7 @@
         handler(nil);
 }
 
-- (void) completePurchase:(NSString*)identifier
+- (void)completePurchase:(NSString*)identifier
 {
     [PurchaseHistory recordPurchase:identifier];
     [self provideContent:identifier];

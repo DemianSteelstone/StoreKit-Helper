@@ -14,10 +14,13 @@
 
 @implementation StoreKitHelper
 
-+(void)buyFeature:(NSString*)identifier completitionBlock:(void (^)(NSError* error))block
++(void)appDidFinishLaunching
 {
     [StoreKitPaymentQueue instance];
-    
+}
+
++(void)buyFeature:(NSString*)identifier completitionBlock:(void (^)(NSError* error))block
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         ProductsRequest *request = [[ProductsRequest alloc] initWithIdentifiers:[NSSet setWithObject:identifier]];
         [request requestProductsCompletitionBlock:^(NSArray *products, NSArray *invalid) {
